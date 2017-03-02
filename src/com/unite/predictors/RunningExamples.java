@@ -27,19 +27,23 @@ public class RunningExamples {
 		roundedAveragePredictor.initialize(a);
 		System.out.println(roundedAveragePredictor.getResult());
 		/**
-		 * SeasonalNaivePredictor
+		 * Seasonal Naive Predictor
 		 */
 		SeasonalNaivePredictor seasonalNaivePredictor = new SeasonalNaivePredictor(2);
 		seasonalNaivePredictor.initialize(a);
 		System.out.println(seasonalNaivePredictor.getResult());
 		/**
-		 * DoubleExponentialPredictor
+		 * Double Exponential Predictor
 		 */
 		DoubleExponentialPredictor doubleExponentialPredictor = new DoubleExponentialPredictor();
 		doubleExponentialPredictor.initialize(a);
 		System.out.println(doubleExponentialPredictor.getResult());
-		
-		
+		/**
+		 * Drift Predictor
+		 */
+		DriftPredictor driftPredictor = new DriftPredictor();
+		driftPredictor.initialize(a);
+		System.out.println(driftPredictor.getResult());
 	}
 
 }

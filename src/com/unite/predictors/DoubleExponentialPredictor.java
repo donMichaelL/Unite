@@ -1,6 +1,7 @@
 package com.unite.predictors;
 
 public class DoubleExponentialPredictor implements Predictor{
+	//TODO What is this PARAMETER
 	private static final double PARAMETER = 0.6;
 	private double[] data;
 	
