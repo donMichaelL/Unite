@@ -44,6 +44,12 @@ public class RunningExamples {
 		DriftPredictor driftPredictor = new DriftPredictor();
 		driftPredictor.initialize(a);
 		System.out.println(driftPredictor.getResult());
+		/**
+		 * Extrapolation Predictor
+		 */
+		ExtrapolationPredictor extrapolationPredictor = new ExtrapolationPredictor();
+		extrapolationPredictor.initialize(a);
+		System.out.println(extrapolationPredictor.getResult());
 	}
 
 }
