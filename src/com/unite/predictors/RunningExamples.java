@@ -63,6 +63,14 @@ public class RunningExamples {
 		holtWintersAddPredictor.initialize(a);
 		// TODO Prints 0
 		System.out.println(holtWintersAddPredictor.getResult());
+		/**
+		 * Holt Winters Mul Predictor
+		 */
+		HoltWintersMulPredictor holtWintersMulPredictor = new HoltWintersMulPredictor();
+		holtWintersMulPredictor.initialize(a);
+		// TODO Prints 0
+		System.out.println(holtWintersMulPredictor.getResult());
+		
 		
 	}
 
