@@ -95,7 +95,12 @@ public class RunningExamples {
 		PolynomialPredictor polynomialPredictor = new PolynomialPredictor();
 		polynomialPredictor.initialize(a);
 		System.out.println(polynomialPredictor.getResult());
-		
+		/**
+		 * Single Exponential Predictor
+		 */
+		SingleExponentialPredictor singleExponentialPredictor = new SingleExponentialPredictor();
+		singleExponentialPredictor.initialize(a);
+		System.out.println(singleExponentialPredictor.getResult());
 	}
 
 }
