@@ -107,6 +107,13 @@ public class RunningExamples {
 		TriangularMovingAveragePredictor triangularMovingAveragePredictor = new TriangularMovingAveragePredictor();
 		triangularMovingAveragePredictor.initialize(a);
 		System.out.println(triangularMovingAveragePredictor.getResult());
+		/**
+		 * Neural Network Predictor
+		 */
+		//TODO PROBLEM WITH HOSPITAL DATA + TRAINING SET
+		NeuralNetworkPredictor neuralNetworkPredictor = new NeuralNetworkPredictor();
+		neuralNetworkPredictor.initialize(a);
+		//System.out.println(neuralNetworkPredictor.getResult());
 		
 	}
 
