@@ -56,6 +56,14 @@ public class RunningExamples {
 		GeometricMovingAveragePredictor geometricMovingAveragePredictor = new GeometricMovingAveragePredictor();
 		geometricMovingAveragePredictor.initialize(a);
 		System.out.println(geometricMovingAveragePredictor.getResult());
+		/**
+		 * Holt Winters Add Predictor
+		 */
+		HoltWintersAddPredictor holtWintersAddPredictor = new HoltWintersAddPredictor();
+		holtWintersAddPredictor.initialize(a);
+		// TODO Prints 0
+		System.out.println(holtWintersAddPredictor.getResult());
+		
 	}
 
 }

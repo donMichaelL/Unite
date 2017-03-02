@@ -12,6 +12,7 @@ public class GeometricMovingAveragePredictor implements Predictor{
 	}
 
 	public double getResult() {
+		if (data==null) return 0;
 	 	double forecasts;
 	 	forecasts=geometricMA(data,period);
 	 	return forecasts;
