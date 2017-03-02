@@ -76,6 +76,12 @@ public class RunningExamples {
 		LinearPredictor linearPredictor = new LinearPredictor();
 		linearPredictor.initialize(a);
 		System.out.println(linearPredictor.getResult());
+		/**
+		 * Linear Regression Predictor
+		 */
+		LinearRegressionPredictor linearRegressionPredictor = new LinearRegressionPredictor();
+		linearRegressionPredictor.initialize(a);
+		System.out.println(linearRegressionPredictor.getResult());
 		
 	}
 
