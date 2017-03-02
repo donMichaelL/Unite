@@ -6,20 +6,23 @@ public class RunningExamples {
 		/**
 		 * Moving Average Predictor
 		 */
-		int period = 2;
+		int period = 2; // 2 4 5 7 
 		MovingAveragePredictor movingAveragePredictor = new MovingAveragePredictor(period);
 		double[] a = {11, 13 ,13, 10};
 		movingAveragePredictor.initialize(a);
 		System.out.println(movingAveragePredictor.getResult());
 		
 		/**
-		 * CyclePredictor
+		 * Cycle Predictor
 		 */
-		period = 5;
+		period = 5; // 3 5 6 8
 		CyclePredictor cyclePredictor = new CyclePredictor(period);
 		cyclePredictor.initialize(a);
 		System.out.println(cyclePredictor.getResult());
-		
+		/**
+		 * Round Average Predictor
+		 */
+		period = 2; // 2 4 5 7
 		
 		
 
