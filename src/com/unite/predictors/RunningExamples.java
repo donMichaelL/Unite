@@ -82,6 +82,12 @@ public class RunningExamples {
 		LinearRegressionPredictor linearRegressionPredictor = new LinearRegressionPredictor();
 		linearRegressionPredictor.initialize(a);
 		System.out.println(linearRegressionPredictor.getResult());
+		/**
+		 * Parabolic Moving Average Predictor
+		 */
+		ParabolicMovingAveragePredictor parabolicMovingAveragePredictor = new ParabolicMovingAveragePredictor();
+		parabolicMovingAveragePredictor.initialize(a);
+		System.out.println(parabolicMovingAveragePredictor.getResult());
 		
 	}
 
