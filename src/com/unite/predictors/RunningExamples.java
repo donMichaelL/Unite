@@ -32,6 +32,13 @@ public class RunningExamples {
 		SeasonalNaivePredictor seasonalNaivePredictor = new SeasonalNaivePredictor(2);
 		seasonalNaivePredictor.initialize(a);
 		System.out.println(seasonalNaivePredictor.getResult());
+		/**
+		 * DoubleExponentialPredictor
+		 */
+		DoubleExponentialPredictor doubleExponentialPredictor = new DoubleExponentialPredictor();
+		doubleExponentialPredictor.initialize(a);
+		System.out.println(doubleExponentialPredictor.getResult());
+		
 		
 	}
 
