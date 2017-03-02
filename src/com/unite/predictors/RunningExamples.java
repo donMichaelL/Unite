@@ -23,9 +23,16 @@ public class RunningExamples {
 		 * Round Average Predictor
 		 */
 		period = 2; // 2 4 5 7
+		RoundedAveragePredictor roundedAveragePredictor = new RoundedAveragePredictor(2);
+		roundedAveragePredictor.initialize(a);
+		System.out.println(roundedAveragePredictor.getResult());
+		/**
+		 * SeasonalNaivePredictor
+		 */
+		SeasonalNaivePredictor seasonalNaivePredictor = new SeasonalNaivePredictor(2);
+		seasonalNaivePredictor.initialize(a);
+		System.out.println(seasonalNaivePredictor.getResult());
 		
-		
-
 	}
 
 }
