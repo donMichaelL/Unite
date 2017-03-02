@@ -70,7 +70,12 @@ public class RunningExamples {
 		holtWintersMulPredictor.initialize(a);
 		// TODO Prints 0
 		System.out.println(holtWintersMulPredictor.getResult());
-		
+		/**
+		 * Linear Predictor
+		 */
+		LinearPredictor linearPredictor = new LinearPredictor();
+		linearPredictor.initialize(a);
+		System.out.println(linearPredictor.getResult());
 		
 	}
 
