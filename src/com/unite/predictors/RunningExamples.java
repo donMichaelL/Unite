@@ -50,6 +50,12 @@ public class RunningExamples {
 		ExtrapolationPredictor extrapolationPredictor = new ExtrapolationPredictor();
 		extrapolationPredictor.initialize(a);
 		System.out.println(extrapolationPredictor.getResult());
+		/**
+		 * Geometric Moving Average Predictor
+		 */
+		GeometricMovingAveragePredictor geometricMovingAveragePredictor = new GeometricMovingAveragePredictor();
+		geometricMovingAveragePredictor.initialize(a);
+		System.out.println(geometricMovingAveragePredictor.getResult());
 	}
 
 }
