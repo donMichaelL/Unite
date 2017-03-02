@@ -15,6 +15,10 @@ public class RunningExamples {
 		/**
 		 * CyclePredictor
 		 */
+		period = 5;
+		CyclePredictor cyclePredictor = new CyclePredictor(period);
+		cyclePredictor.initialize(a);
+		System.out.println(cyclePredictor.getResult());
 		
 		
 		
