@@ -6,8 +6,8 @@ import java.util.Queue;
 
 public class MovingAveragePredictor implements Predictor {
 
-    private  Queue<Double> window = new LinkedList<Double>();
-    private  int period;
+    private Queue<Double> window = new LinkedList<Double>();
+    private int period;
     private double sum;
     private double[] data;
     
@@ -17,6 +17,7 @@ public class MovingAveragePredictor implements Predictor {
 
     public void initialize(double[] a) {
        data=a;
+       if (this.period>data.length) this.period=data.length;
 	}
  
     private void newNum(double num) {
@@ -36,13 +37,27 @@ public class MovingAveragePredictor implements Predictor {
     
     public double getResult() {
     	int i;
-    	if (data==null){
-    		return 0;
-    	}
+    	if (data==null)return 0;
+    	
     	for(i=0;i<data.length;i++) {
     		newNum(data[i]);
     	}
     	return SMA();	
 	}
-
+    
+    /**
+     * Iterating to the last period elements of the table
+     * @return double moving average predictor
+     */
+    public double getResultsWithoutIteratingAllArray() {
+    	if (data==null || period==0) return 0;
+    	if (data.length==1) return data[data.length-1];
+    	
+    	double total=0;
+    	for(int i=(data.length-1);i>(data.length-period-1);--i){
+    		total += data[i];
+    	}
+    	
+    	return total/period;
+    }
 }

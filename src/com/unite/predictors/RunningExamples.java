@@ -6,9 +6,9 @@ public class RunningExamples {
 		/**
 		 * Moving Average Predictor
 		 */
-		int period = 2; // 2 4 5 7 
+		int period = 5; // 2 4 5 7 
 		MovingAveragePredictor movingAveragePredictor = new MovingAveragePredictor(period);
-		double[] a = {11, 13 ,13, 10};
+		double[] a = {3, 10, 23, 22};
 		movingAveragePredictor.initialize(a);
 		System.out.println(movingAveragePredictor.getResult());
 		
