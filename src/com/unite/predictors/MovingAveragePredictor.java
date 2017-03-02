@@ -10,9 +10,12 @@ public class MovingAveragePredictor implements Predictor {
     private  int period;
     private double sum;
     private double[] data;
+    
+    public MovingAveragePredictor(int period) {
+		this.period = period;
+	}
 
     public void initialize(double[] a) {
-       this.period=2;
        data=a;
 	}
  
