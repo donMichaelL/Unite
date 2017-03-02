@@ -101,6 +101,13 @@ public class RunningExamples {
 		SingleExponentialPredictor singleExponentialPredictor = new SingleExponentialPredictor();
 		singleExponentialPredictor.initialize(a);
 		System.out.println(singleExponentialPredictor.getResult());
+		/**
+		 * Single Exponential Predictor
+		 */
+		TriangularMovingAveragePredictor triangularMovingAveragePredictor = new TriangularMovingAveragePredictor();
+		triangularMovingAveragePredictor.initialize(a);
+		System.out.println(triangularMovingAveragePredictor.getResult());
+		
 	}
 
 }
