@@ -10,6 +10,7 @@ public class ParabolicMovingAveragePredictor implements Predictor {
 
 	public double getResult() {
 		// TODO IS THIS CONSTANT
+		if (data==null) return 0;
 		double trend=0.02;
 		double forecast;
 		forecast=exponential(data,trend);

@@ -88,6 +88,13 @@ public class RunningExamples {
 		ParabolicMovingAveragePredictor parabolicMovingAveragePredictor = new ParabolicMovingAveragePredictor();
 		parabolicMovingAveragePredictor.initialize(a);
 		System.out.println(parabolicMovingAveragePredictor.getResult());
+		/**
+		 * Polynomial Predictor
+		 */
+		//TODO result -1 ????
+		PolynomialPredictor polynomialPredictor = new PolynomialPredictor();
+		polynomialPredictor.initialize(a);
+		System.out.println(polynomialPredictor.getResult());
 		
 	}
 
