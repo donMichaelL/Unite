@@ -1,6 +1,7 @@
 package com.unite.predictors;
 
 public class PolynomialPredictor implements Predictor{
+	private static double TINY = 1.0e-99; 
 	//It uses the Rational Function approach
 	private double[] yy;
 	
@@ -9,7 +10,7 @@ public class PolynomialPredictor implements Predictor{
 	}
 	
 	public double getResult() {
-		if (yy==null) return 0;
+		if (yy==null) throw new IllegalArgumentException();
 		double x= 11;
 		double dy;
 		double[] xx = new double[yy.length];
@@ -17,7 +18,6 @@ public class PolynomialPredictor implements Predictor{
 			xx[i] = i+1;
 	    int mm = xx.length;
 		int jl = 0;
-		double TINY=1.0e-99; 
 		int m,i,ns=0;
 		double y  ,w,t,hh,h,dd;
 		double[] xa = xx, ya = yy;
@@ -43,7 +43,7 @@ public class PolynomialPredictor implements Predictor{
 				t=(xa[i]-x)*d[i]/h;
 				dd=t-c[i+1];
 				if (dd == 0.0) 
-					return -1; //System.out.println("Error in routine ratint");
+					throw new IllegalArgumentException();
 				dd=w/dd;
 				d[i]=c[i+1]*dd;
 				c[i]=t*dd;

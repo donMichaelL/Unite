@@ -12,7 +12,7 @@ public class ExtrapolationPredictor extends AbstractPredictor{
 	 */
 	public double getResult() {
 		if (size() < MINIMUM_TABLE_SIZE) 
-			return data[size() - 1];
+			throw new IllegalArgumentException();
 		return (2.0 * data[size()-1] - data[size()-2]);
 	}
 }

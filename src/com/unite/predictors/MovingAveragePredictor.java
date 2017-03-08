@@ -18,6 +18,7 @@ public class MovingAveragePredictor extends AbstractPredictor {
      * throws IllegalArgumentException
      */
     public double getResult() {
+    	//TODO negative check second if
     	if (period==0) throw new IllegalArgumentException();
     	if (size()==1) return data[size()-1];
     	

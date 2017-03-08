@@ -20,8 +20,8 @@ public class HoltWintersAddPredictor implements Predictor {
 		Bs = initializeBs(data, s);
 		Si = getSi(data, s);
 		//TODO PARAMETERS OR CONSTANTS ?
-		double a = 0.5;  //<--------- check for random [0,1]
-		double b = 0.3;  //<--------- check for random [0,1]
+		double a = 0.9;  //<--------- check for random [0,1]
+		double b = 0.9;  //<--------- check for random [0,1]
 		double c = 0.9;  //<--------- check for random [0,1]
 		double Lt;
 		double Lt1;

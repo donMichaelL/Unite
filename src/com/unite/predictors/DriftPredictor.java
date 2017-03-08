@@ -12,11 +12,9 @@ public class DriftPredictor extends AbstractPredictor {
      */
 	public double getResult() {
 		double parameter;
-		if(size() >= MINIMUM_TABLE_SIZE) {
-			parameter=(data[size()-1]-data[0])/(size());
-		} else {
-			parameter=0;
-		}
+		if(size() < MINIMUM_TABLE_SIZE) 
+			throw new IllegalArgumentException();
+		parameter=(data[size()-1]-data[0])/(size());
 		return (parameter * (size()+1)) + data[0];
 	}
 }

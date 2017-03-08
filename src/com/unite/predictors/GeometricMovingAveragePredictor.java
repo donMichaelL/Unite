@@ -22,7 +22,7 @@ public class GeometricMovingAveragePredictor extends AbstractPredictor{
 	private static double geometricMA(double[] datatable, int period) {
 		double sum= 0;
 		int limit = datatable.length - period;
-		if (limit < 0) limit=0;
+		if (limit < 0) throw new IllegalArgumentException();
 		for(int i = datatable.length-1; i >= limit ; i--) {
 				sum += Math.log(datatable[i]);
 		}

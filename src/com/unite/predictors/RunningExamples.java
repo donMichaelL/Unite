@@ -1,9 +1,9 @@
 package com.unite.predictors;
 
 public class RunningExamples {
-
+	
 	public static void main(String[] args) {
-		double[] a = {2, 4, 6, 10, 1};
+		double[] a = {7, 9, 11, 13, 15};
 		/**
 		 * Moving Average Predictor
 		 */
@@ -55,7 +55,7 @@ public class RunningExamples {
 		HoltWintersAddPredictor holtWintersAddPredictor = new HoltWintersAddPredictor();
 		holtWintersAddPredictor.initialize(a);
 		// TODO Prints 0
-		System.out.println(holtWintersAddPredictor.getResult());
+		System.out.println("sdafs" +holtWintersAddPredictor.getResult());
 		/**
 		 * Holt Winters Mul Predictor
 		 */
@@ -73,7 +73,7 @@ public class RunningExamples {
 		 */
 		LinearRegressionPredictor linearRegressionPredictor = new LinearRegressionPredictor();
 		linearRegressionPredictor.initialize(a);
-		System.out.println(linearRegressionPredictor.getResult());
+		System.out.println("df  "+ linearRegressionPredictor.getResult());
 		/**
 		 * Parabolic Moving Average Predictor
 		 */

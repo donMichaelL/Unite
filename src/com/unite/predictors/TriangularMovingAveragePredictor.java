@@ -19,7 +19,7 @@ public class TriangularMovingAveragePredictor  extends AbstractPredictor {
 	private static double triangularMA(double[] datatable, int period) {
 		double sum = 0;
 		int limit = datatable.length-period;
-		if (limit < 0) limit=0;
+		if (limit < 0) throw new IllegalArgumentException();
 		
 		for(int i = datatable.length-1; i >= limit ; i--) {
 			sum = sum+datatable[i];

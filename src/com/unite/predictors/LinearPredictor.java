@@ -21,7 +21,7 @@ public class LinearPredictor extends AbstractPredictor {
 	}
 	
 	//it returns the coefficients table
-	//TODO check params
+	//TODO check period for performance
 	private static double[] levinsondurbin (double[] r, int m, double[] coeffs) {
 		int i;
 		int j; int k;

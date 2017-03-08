@@ -15,9 +15,6 @@ public class CyclePredictor extends AbstractPredictor{
 	public double getResult() {
 		if (size() - period >= 0)
 			return data[size() - period];
-		// TODO throw IllegalArgumentException 
-		else if (size() - 1 >= 0)
-			return data[size() - 1];
 		else
 			throw new IllegalArgumentException();
 	}

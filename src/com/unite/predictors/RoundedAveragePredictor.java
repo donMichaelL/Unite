@@ -18,6 +18,7 @@ public class RoundedAveragePredictor extends AbstractPredictor {
      */
     public double getResult() {
     	if (period==0)throw new IllegalArgumentException();
+    	//TODO 
     	if (size()==1) return data[size()-1];
     	
     	double total=0;
