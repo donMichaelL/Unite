@@ -1,6 +1,6 @@
 package com.unite.predictors;
 
-public interface Predictor {
+public abstract interface Predictor {
 	
 	void initialize(double[] a);
 	
