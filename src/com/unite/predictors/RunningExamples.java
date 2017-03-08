@@ -3,58 +3,51 @@ package com.unite.predictors;
 public class RunningExamples {
 
 	public static void main(String[] args) {
+		double[] a = {2, 4, 6, 10, 1};
 		/**
 		 * Moving Average Predictor
 		 */
 		int period = 5; // 2 4 5 7 
-		MovingAveragePredictor movingAveragePredictor = new MovingAveragePredictor(period);
-		double[] a = {3, 10, 23, 22};
-		movingAveragePredictor.initialize(a);
+		MovingAveragePredictor movingAveragePredictor = new MovingAveragePredictor(a, period);
 		System.out.println(movingAveragePredictor.getResult());
-		
 		/**
 		 * Cycle Predictor
 		 */
-		period = 5; // 3 5 6 8
-		CyclePredictor cyclePredictor = new CyclePredictor(period);
-		cyclePredictor.initialize(a);
+		period = 4; // 3 5 6 8
+		CyclePredictor cyclePredictor = new CyclePredictor(a, period);
 		System.out.println(cyclePredictor.getResult());
 		/**
 		 * Round Average Predictor
 		 */
-		period = 2; // 2 4 5 7
-		RoundedAveragePredictor roundedAveragePredictor = new RoundedAveragePredictor(2);
-		roundedAveragePredictor.initialize(a);
+		period = 5; // 2 4 5 7
+		RoundedAveragePredictor roundedAveragePredictor = new RoundedAveragePredictor(a, period);
 		System.out.println(roundedAveragePredictor.getResult());
 		/**
 		 * Seasonal Naive Predictor
 		 */
-		SeasonalNaivePredictor seasonalNaivePredictor = new SeasonalNaivePredictor(2);
-		seasonalNaivePredictor.initialize(a);
+		SeasonalNaivePredictor seasonalNaivePredictor = new SeasonalNaivePredictor(a, period);
 		System.out.println(seasonalNaivePredictor.getResult());
+
 		/**
 		 * Double Exponential Predictor
 		 */
-		DoubleExponentialPredictor doubleExponentialPredictor = new DoubleExponentialPredictor();
-		doubleExponentialPredictor.initialize(a);
+		ExponentialPredictor doubleExponentialPredictor = new ExponentialPredictor(a, 0.6);
+		doubleExponentialPredictor.setTimesExponential(2);
 		System.out.println(doubleExponentialPredictor.getResult());
 		/**
 		 * Drift Predictor
 		 */
-		DriftPredictor driftPredictor = new DriftPredictor();
-		driftPredictor.initialize(a);
+		DriftPredictor driftPredictor = new DriftPredictor(a);
 		System.out.println(driftPredictor.getResult());
 		/**
 		 * Extrapolation Predictor
 		 */
-		ExtrapolationPredictor extrapolationPredictor = new ExtrapolationPredictor();
-		extrapolationPredictor.initialize(a);
+		ExtrapolationPredictor extrapolationPredictor = new ExtrapolationPredictor(a);
 		System.out.println(extrapolationPredictor.getResult());
 		/**
 		 * Geometric Moving Average Predictor
 		 */
-		GeometricMovingAveragePredictor geometricMovingAveragePredictor = new GeometricMovingAveragePredictor();
-		geometricMovingAveragePredictor.initialize(a);
+		GeometricMovingAveragePredictor geometricMovingAveragePredictor = new GeometricMovingAveragePredictor(a, 4);
 		System.out.println(geometricMovingAveragePredictor.getResult());
 		/**
 		 * Holt Winters Add Predictor
@@ -73,8 +66,7 @@ public class RunningExamples {
 		/**
 		 * Linear Predictor
 		 */
-		LinearPredictor linearPredictor = new LinearPredictor();
-		linearPredictor.initialize(a);
+		LinearPredictor linearPredictor = new LinearPredictor(a);
 		System.out.println(linearPredictor.getResult());
 		/**
 		 * Linear Regression Predictor
@@ -85,8 +77,7 @@ public class RunningExamples {
 		/**
 		 * Parabolic Moving Average Predictor
 		 */
-		ParabolicMovingAveragePredictor parabolicMovingAveragePredictor = new ParabolicMovingAveragePredictor();
-		parabolicMovingAveragePredictor.initialize(a);
+		ParabolicMovingAveragePredictor parabolicMovingAveragePredictor = new ParabolicMovingAveragePredictor(a, 0.02);
 		System.out.println(parabolicMovingAveragePredictor.getResult());
 		/**
 		 * Polynomial Predictor
@@ -98,14 +89,13 @@ public class RunningExamples {
 		/**
 		 * Single Exponential Predictor
 		 */
-		SingleExponentialPredictor singleExponentialPredictor = new SingleExponentialPredictor();
-		singleExponentialPredictor.initialize(a);
+		ExponentialPredictor singleExponentialPredictor = new ExponentialPredictor(a, 0.6);
+		singleExponentialPredictor.setTimesExponential(1);
 		System.out.println(singleExponentialPredictor.getResult());
 		/**
-		 * Single Exponential Predictor
+		 * Triangular Moving Average Predictor
 		 */
-		TriangularMovingAveragePredictor triangularMovingAveragePredictor = new TriangularMovingAveragePredictor();
-		triangularMovingAveragePredictor.initialize(a);
+		TriangularMovingAveragePredictor triangularMovingAveragePredictor = new TriangularMovingAveragePredictor(a, period);
 		System.out.println(triangularMovingAveragePredictor.getResult());
 		/**
 		 * Neural Network Predictor
