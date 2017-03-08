@@ -3,6 +3,9 @@ package com.unite.predictors;
 public abstract class AbstractPredictor implements Predictor {
 	protected double[] data;
 	
+	public AbstractPredictor(){
+	}
+	
 	public AbstractPredictor(double[] data) {
 		super();
 		initialize(data);
