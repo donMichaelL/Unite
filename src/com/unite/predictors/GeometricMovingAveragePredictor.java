@@ -1,37 +1,31 @@
 package com.unite.predictors;
 
-public class GeometricMovingAveragePredictor implements Predictor{
-	private double[] data;
+public class GeometricMovingAveragePredictor extends AbstractPredictor{
 	private  int period;
 	
-   
-	public void initialize(double[] a) {
-		data=a;
-		//TODO CHECK THIS PARAMETER
-		period=a.length;
+	GeometricMovingAveragePredictor(double[] data, int period){
+		super(data);
+		this.period = period;
 	}
+	
 
 	public double getResult() {
-		if (data==null) return 0;
-	 	double forecasts;
-	 	forecasts=geometricMA(data,period);
-	 	return forecasts;
+	 	return geometricMA(data,period);
 	}
-
-	 private static double geometricMA(double[] datatable, int period) {
-		int i,length;
-		double sum,forecast,f1;
-		f1 = 0;
-		sum = 0;
-		forecast = 0;
-		length = datatable.length-period;
-		for(i = datatable.length-1; i >= length ; i--) {
-			if(i >= 0) {
-				sum = sum+Math.log(datatable[i]);
-			} 
+	
+	/**
+	 * throws NullPointerException
+	 * @param datatable
+	 * @param period
+	 * @return
+	 */
+	private static double geometricMA(double[] datatable, int period) {
+		double sum= 0;
+		int limit = datatable.length - period;
+		if (limit < 0) limit=0;
+		for(int i = datatable.length-1; i >= limit ; i--) {
+				sum += Math.log(datatable[i]);
 		}
-		f1 = sum/period;
-		forecast = Math.exp(f1);
-		return forecast;
+		return Math.exp(sum/period);
 	}
 }

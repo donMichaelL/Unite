@@ -1,7 +1,7 @@
 package com.unite.predictors;
 
 public class DriftPredictor extends AbstractPredictor {
-	private static int MINIMUM_TABLE_SIZE = 1;
+	private static int MINIMUM_TABLE_SIZE = 2;
 	
     DriftPredictor(double[] data){
     	super(data);
@@ -12,7 +12,7 @@ public class DriftPredictor extends AbstractPredictor {
      */
 	public double getResult() {
 		double parameter;
-		if(size()>MINIMUM_TABLE_SIZE) {
+		if(size() >= MINIMUM_TABLE_SIZE) {
 			parameter=(data[size()-1]-data[0])/(size());
 		} else {
 			parameter=0;

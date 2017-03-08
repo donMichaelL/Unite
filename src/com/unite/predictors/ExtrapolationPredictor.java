@@ -2,6 +2,10 @@ package com.unite.predictors;
 
 public class ExtrapolationPredictor extends AbstractPredictor{
 	private static int MINIMUM_TABLE_SIZE = 2;
+	
+	ExtrapolationPredictor(double[] data) {
+		super(data);
+	}
 
 	/**
 	 * throws NullPointerException
