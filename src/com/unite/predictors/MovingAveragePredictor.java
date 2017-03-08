@@ -7,7 +7,8 @@ public class MovingAveragePredictor extends AbstractPredictor {
     
     public MovingAveragePredictor(double[] data, int period) {
     	super(data);
-    	if (this.period>size()) this.period=size();
+    	if (this.period>size())	{this.period=size();}
+    	else {this.period = period;}
 	}
 
     /**
@@ -17,7 +18,7 @@ public class MovingAveragePredictor extends AbstractPredictor {
      * throws IllegalArgumentException
      */
     public double getResult() {
-    	if (period==0) throw new IllegalArgumentException();
+    	if (period==0)throw new IllegalArgumentException();
     	if (size()==1) return data[size()-1];
     	
     	double total=0;
