@@ -1,25 +1,24 @@
 package com.unite.predictors;
 
-public class CyclePredictor implements Predictor{
-	private double[] data;
+public class CyclePredictor extends AbstractPredictor{
 	private int period;
 	
-	public CyclePredictor(int period) {
+	public CyclePredictor(double[] data, int period) {
+		super(data);
 		this.period = period;
 	}
-	
-	public void initialize(double[] a) {
-		data = a;
-	}
-	
+
+	/**
+	 * throws NullPointerException
+	 * throws IllegalArgumentException
+	 */
 	public double getResult() {
-		if (data==null)
-			return 0;
-		if (data.length - period >= 0)
-			return data[data.length - period];
-		else if (data.length - 1 >= 0)
-			return data[data.length - 1];
+		if (size() - period >= 0)
+			return data[size() - period];
+		// TODO throw IllegalArgumentException 
+		else if (size() - 1 >= 0)
+			return data[size() - 1];
 		else
-			return 0.0;
+			throw new IllegalArgumentException();
 	}
 }
