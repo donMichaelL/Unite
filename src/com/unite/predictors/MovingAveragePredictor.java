@@ -13,6 +13,8 @@ public class MovingAveragePredictor extends AbstractPredictor {
     /**
      * Iterating to the last period elements of the table
      * @return double moving average predictor
+     * throws NullPointerException
+     * throws IllegalArgumentException
      */
     public double getResult() {
     	if (period==0) throw new IllegalArgumentException();
