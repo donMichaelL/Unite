@@ -1,46 +1,23 @@
 package com.unite.predictors;
 
-import java.util.LinkedList;
-import java.util.Queue;
 
-public class SeasonalNaivePredictor implements Predictor{
-	private  Queue<Double> window = new LinkedList<Double>();
-	private  int steps; //steps are 1,2,3,4,5
-	private double[] data;
+public class SeasonalNaivePredictor extends AbstractPredictor{
+	private  int period;
 	
-	public SeasonalNaivePredictor(int steps) {
-		this.steps = steps;
+	public SeasonalNaivePredictor(double[] data, int period) {
+		super(data);
+		this.period = period;
 	}
 
-
-	public void initialize(double[] a) {
-	    data=a;
-	}
-
-	private void newNum(double num) {
-	    window.add(num);
-	    if (window.size() > 1) {
-	    	double rm=window.remove();
-	    }
-	}
-
-	private double Naive() {
-		if (window.isEmpty()) return 0; // technically the average is undefined
-		return window.element() ;
-	}
-
-
-	public double getResult() {
-		if (data==null) return 0;
-		int i;
-		i=0;
-		newNum(data[i]);
-		i=i+steps-1;
-		while(i<data.length) {	
-			newNum(data[i]);
-			//System.out.println(data[i]);
-			i=i+steps;
+	/**
+	 * throws NullPointerExceptions
+	 */
+	public double getResult(){
+		if (period>data.length) throw new IllegalArgumentException();
+		double result = data[0];
+		for(int i=period-1; i<data.length; i+=period){
+			result = data[i];
 		}
-		return Naive();	
+		return result;
 	}
 }
