@@ -48,6 +48,7 @@ public class HoltWintersAddPredictor implements Predictor {
 			sum += data[i];
 		return sum / Double.parseDouble(Integer.toString(s));
 	}
+	
 	private double initializeBs(double[] data, int s) {
 		double sum = 0.0;
 		int middle = s / 2;
@@ -57,6 +58,7 @@ public class HoltWintersAddPredictor implements Predictor {
 			
 		return sum / Double.parseDouble(Integer.toString(s));
 	}
+	
 	private double[] getSi(double[] data, int s) {
 		double[] Si = new double[s];
 		for (int i = 0; i < s; i ++)

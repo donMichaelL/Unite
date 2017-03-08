@@ -1,14 +1,13 @@
 package com.unite.predictors;
 
-public class LinearPredictor implements Predictor {
-	private double[] data;
+public class LinearPredictor extends AbstractPredictor {
 	
-	public void initialize(double[] a){
-		data = a;
+	LinearPredictor(double[] data){
+		super(data);
 	}
 	
 	public double getResult() {
-		if (data==null) return 0;
+		//TODO CHECK dat, data, coeffs
 		double[] dat = new double[data.length + 1];
 		for (int i = 0; i < data.length; i ++)
 			dat[i] = data[i];
@@ -22,6 +21,7 @@ public class LinearPredictor implements Predictor {
 	}
 	
 	//it returns the coefficients table
+	//TODO check params
 	private static double[] levinsondurbin (double[] r, int m, double[] coeffs) {
 		int i;
 		int j; int k;
