@@ -1,19 +1,27 @@
 package com.unite.predictors;
 
-public class DoubleExponentialPredictor extends AbstractPredictor{
+public class ExponentialPredictor extends AbstractPredictor{
 	private double parameter;
+	private int timesExponential=1;
 	
-	DoubleExponentialPredictor(double[] data, double parameter){
+
+	ExponentialPredictor(double[] data, double parameter){
 		super(data);
 		this.parameter = parameter;
 	}
 	
 	public double getResult() {
-		double[] forecasts_table;
-		
-		forecasts_table=exponential(data, parameter);
-		forecasts_table=exponential(forecasts_table, parameter);
-		return forecasts_table[forecasts_table.length-1];
+		for(int i=0;i<timesExponential;i++)
+			data=exponential(data, parameter);
+		return data[data.length-1];
+	}
+	
+	public int getTimesExponential() {
+		return timesExponential;
+	}
+
+	public void setTimesExponential(int timesExponential) {
+		this.timesExponential = timesExponential;
 	}
 
   	private static double[] exponential(double[] input, double param) {
