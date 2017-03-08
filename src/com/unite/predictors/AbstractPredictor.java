@@ -16,4 +16,7 @@ public abstract class AbstractPredictor implements Predictor {
 		data = a;
 	}
 	
+	public int size(){
+		return data.length;
+	}
 }
