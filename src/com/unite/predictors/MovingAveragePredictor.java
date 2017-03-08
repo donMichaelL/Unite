@@ -7,7 +7,7 @@ public class MovingAveragePredictor extends AbstractPredictor {
     
     public MovingAveragePredictor(double[] data, int period) {
     	super(data);
-    	if (this.period>size())	{this.period=size();}
+    	if (period>size())	{this.period=size();}
     	else {this.period = period;}
 	}
 
