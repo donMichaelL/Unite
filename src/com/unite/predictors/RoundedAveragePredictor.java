@@ -17,14 +17,6 @@ public class RoundedAveragePredictor extends AbstractPredictor {
      * throws IllegalArgumentException
      */
     public double getResult() {
-    	if (period==0)throw new IllegalArgumentException();
-    	//TODO 
-    	if (size()==1) return data[size()-1];
-    	
-    	double total=0;
-    	for(int i=(size()-1);i>(size()-period-1);--i){
-    		total += data[i];
-    	}
-    	return Math.round(total/period);
+    	return Math.round(super.calculateAverage(data, period));
     }  
 }
