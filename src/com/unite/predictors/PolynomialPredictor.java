@@ -1,26 +1,21 @@
 package com.unite.predictors;
 
-public class PolynomialPredictor implements Predictor{
+public class PolynomialPredictor extends AbstractPredictor{
 	private static double TINY = 1.0e-99; 
-	//It uses the Rational Function approach
-	private double[] yy;
-	
-	public void initialize(double[] a){
-		yy = a;
+
+	PolynomialPredictor(double[] data){
+		super(data);
 	}
 	
+
 	public double getResult() {
-		if (yy==null) throw new IllegalArgumentException();
-		double x= 11;
-		double dy;
-		double[] xx = new double[yy.length];
-		for (int i=0; i<yy.length; i++)
+		double x= 11, dy;
+		double[] xx = new double[size()];
+		for (int i=0; i<size(); i++)
 			xx[i] = i+1;
-	    int mm = xx.length;
-		int jl = 0;
-		int m,i,ns=0;
-		double y  ,w,t,hh,h,dd;
-		double[] xa = xx, ya = yy;
+	    int mm = size(), jl=0, m,i,ns=0 ;
+		double y ,w,t,hh,h,dd;
+		double[] xa = xx, ya = data;
 		double[] c = new double[mm],d = new double[mm];
 		hh=Math.abs(x-xa[0]);
 		for (i=0;i<mm;i++) {

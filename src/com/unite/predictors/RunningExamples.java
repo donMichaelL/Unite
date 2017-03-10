@@ -55,7 +55,7 @@ public class RunningExamples {
 		HoltWintersAddPredictor holtWintersAddPredictor = new HoltWintersAddPredictor();
 		holtWintersAddPredictor.initialize(a);
 		// TODO Prints 0
-		System.out.println("sdafs" +holtWintersAddPredictor.getResult());
+		System.out.println(holtWintersAddPredictor.getResult());
 		/**
 		 * Holt Winters Mul Predictor
 		 */
@@ -71,20 +71,18 @@ public class RunningExamples {
 		/**
 		 * Linear Regression Predictor
 		 */
-		LinearRegressionPredictor linearRegressionPredictor = new LinearRegressionPredictor();
-		linearRegressionPredictor.initialize(a);
-		System.out.println("df  "+ linearRegressionPredictor.getResult());
+		LinearRegressionPredictor linearRegressionPredictor = new LinearRegressionPredictor(a);
+		//linearRegressionPredictor.initialize(a);
+		System.out.println(linearRegressionPredictor.getResult());
 		/**
 		 * Parabolic Moving Average Predictor
 		 */
-		ParabolicMovingAveragePredictor parabolicMovingAveragePredictor = new ParabolicMovingAveragePredictor(a, 0.02);
-		System.out.println(parabolicMovingAveragePredictor.getResult());
+		ParabolicMovingAveragePredictor parabolicMovingAveragePredictor = new ParabolicMovingAveragePredictor(a, 0.02, 0.02);
+		System.out.println( parabolicMovingAveragePredictor.getResult());
 		/**
 		 * Polynomial Predictor
 		 */
-		//TODO result -1 ????
-		PolynomialPredictor polynomialPredictor = new PolynomialPredictor();
-		polynomialPredictor.initialize(a);
+		PolynomialPredictor polynomialPredictor = new PolynomialPredictor(a);
 		System.out.println(polynomialPredictor.getResult());
 		/**
 		 * Single Exponential Predictor

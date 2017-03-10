@@ -2,14 +2,16 @@ package com.unite.predictors;
 
 public class ParabolicMovingAveragePredictor extends AbstractPredictor {
 	private double trend;
+	private double step;
 	
-	ParabolicMovingAveragePredictor(double[] data, double trend) {
+	ParabolicMovingAveragePredictor(double[] data, double trend, double step) {
 		super(data);
 		this.trend = trend;
+		this.step = step;
 	}
 	    
 	public double getResult() {
-		return exponential(data, trend, 0.02);
+		return exponential(data, trend, step);
 	}
 
 	private static double exponential(double[] data, double trend, double step) {
