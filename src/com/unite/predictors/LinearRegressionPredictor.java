@@ -1,44 +1,27 @@
 package com.unite.predictors;
 
-import java.text.NumberFormat;
-
-public class LinearRegressionPredictor implements Predictor{
-	
-	private double[] x;
-	private double meanX;
-	private double meanY;
-	private double slope;
-	private double intercept;
-	
-	public void initialize(double[] a) {
-		x = a;
+public class LinearRegressionPredictor extends AbstractPredictor{
+	LinearRegressionPredictor(double[] data){
+		super(data);
 	}
+
 	
 	public double getResult() {
-		if (x==null) return 0;
-		compute();
-		return this.calculateX((double)x.length);
+		return compute();
 	}
 
-	private void compute() {
-		double n = x.length;
-		double sumy = 0.0,
-		sumx = 0.0,
-		sumx2 = 0.0,
-		sumxy = 0.0;
-		for (int i = 0; i < n; i++) {
-			sumx += x[i];
-			sumx2 += x[i] * x[i];
+	private double compute() {
+		double sumy = 0.0, sumx = 0.0, sumx2 = 0.0, sumxy = 0.0;
+		for (int i = 0; i < size(); i++) {
+			sumx += data[i];
+			sumx2 += data[i] * data[i];
 			sumy += i;
-			sumxy += x[i] * i;
+			sumxy += data[i] * i;
 		}
-		meanX = sumx / n;
-		meanY = sumy / n;
-		slope = (sumxy - sumx * meanY) / (sumx2 - sumx * meanX);
-		intercept = meanY - slope * meanX;
-	}
-	/**Calculate X given Y.*/
-	public double calculateX (double y){
-		return (y-intercept)/slope;
+		double meanX = sumx / size();
+		double meanY = sumy / size();
+		double slope = (sumxy - sumx * meanY) / (sumx2 - sumx * meanX);
+		double intercept = meanY - slope * meanX;
+		return (size()-intercept)/slope;
 	}
 }
